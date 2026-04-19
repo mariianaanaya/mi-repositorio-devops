@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Instalando dependencias"
+
+  pre_build:
+    commands:
+      - echo "Preparando build"
+
+  build:
+    commands:
+      - echo "Construyendo contenedor Docker"
+      - docker build -t mi-app ./app
+
+  post_build:
+    commands:
+      - echo "Build completado"
