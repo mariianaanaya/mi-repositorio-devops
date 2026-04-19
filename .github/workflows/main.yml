@@ -1,11 +1,11 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  build:
+  pipeline:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,3 +17,6 @@ jobs:
 
       - name: Ejecutar contenedor
         run: docker run -d -p 5000:5000 mi-app
+
+      - name: Verificar contenedor
+        run: docker ps
